@@ -31,7 +31,7 @@ orders = []
 
 @app.get('/orders', response_model=GetOrdersSchema)
 def get_orders():
-    return orders
+    return {'orders': orders}
 
 @app.post('/orders', status_code=status.HTTP_201_CREATED, response_model=GetOrderSchema)
 def create_order(order_details: CreateOrderSchema):
